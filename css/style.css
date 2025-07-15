@@ -149,8 +149,10 @@ button:hover {
 }
 
 .card-front {
-  background: #3d3053;
-  color: var(--accent);
+  background: url('../images/card-back.png') center center no-repeat;
+  background-size: cover;
+  border-radius: 14px;
+  backface-visibility: hidden;
 }
 
 .card-back {
