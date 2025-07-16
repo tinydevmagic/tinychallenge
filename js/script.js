@@ -121,18 +121,24 @@ function launchConfetti() {
 }
 
 function downloadSelection() {
-    const container = document.querySelector('.chosen-cards');
+    const container = document.getElementById("chosenCards");
+
+    // sicherstellen, dass alle <img> das CORS-Attribut haben
+    container.querySelectorAll("img").forEach(img => {
+        img.setAttribute("crossorigin", "anonymous");
+    });
 
     html2canvas(container, {
         useCORS: true,
-        scale: 2,
         backgroundColor: null,
         allowTaint: false
     }).then(canvas => {
         const link = document.createElement("a");
-        link.download = "tinychallenge.png";
+        link.download = "memory-auswahl.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
+    }).catch(err => {
+        console.error("Screenshot fehlgeschlagen:", err);
+        alert("Screenshot nicht möglich. Prüfe CORS-Header oder lade die Seite über http:// statt file://");
     });
 }
-
