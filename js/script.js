@@ -123,7 +123,7 @@ function launchConfetti() {
 function downloadSelection() {
     const container = document.getElementById("chosenCards");
 
-    // sicherstellen, dass alle <img> das CORS-Attribut haben
+    // add CORS-attribute to <img>
     container.querySelectorAll("img").forEach(img => {
         img.setAttribute("crossorigin", "anonymous");
     });
@@ -134,11 +134,11 @@ function downloadSelection() {
         allowTaint: false
     }).then(canvas => {
         const link = document.createElement("a");
-        link.download = "memory-auswahl.png";
+        link.download = "tinychallenge.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
     }).catch(err => {
-        console.error("Screenshot fehlgeschlagen:", err);
-        alert("Screenshot nicht möglich. Prüfe CORS-Header oder lade die Seite über http:// statt file://");
+        console.error("Error while making screenshot:", err);
+        alert("Something went wrong! Please, try again.");
     });
 }
