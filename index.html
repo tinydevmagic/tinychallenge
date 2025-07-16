@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tiny Challenge</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="app-container">
+        <div class="splash-screen" id="splashScreen">
+            <h1>Tiny Challenge</h1>
+            <p class="subtitle">You will see 6 random cards …</br>
+                Your task: Pick 2 cards!</br>
+                Let the images spark your own creations and share your ideas with others.</p>
+            <button class="start-btn" onclick="startGame()">Start Challenge</button>
+        </div>
+
+        <div class="game-screen" id="gameScreen">
+            <h1>Tiny Challenge</h1>
+            <div class="game-board" id="gameBoard"></div>
+            <div class="status" id="status">Select 2 cards</div>
+            <button class="reset-btn" onclick="resetGame()">New Challenge</button>
+        </div>
+
+        <div class="end-screen" id="endScreen">
+            <h2 class="end-message">🎉 Great choice!</h2>
+            <p class="subtitle">Let the images spark your own creations and share your ideas with others.</p>
+            <div class="chosen-cards" id="chosenCards"></div>
+            <button class="download-btn" onclick="downloadSelection()">Download Selection</button>
+            <button class="reset-btn" onclick="resetGame()">Back to Start</button>
+            <canvas id="confettiCanvas"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
