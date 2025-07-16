@@ -25,7 +25,7 @@ function initGame() {
     gameEnded = false;
     currentCards = shuffle(images).slice(0, 6);
     renderCards();
-    updateStatus("Wähle 2 Karten aus");
+    updateStatus("Pick 2 cards");
     document.getElementById("endScreen").style.display = "none";
 }
 
@@ -64,7 +64,7 @@ function flipCard(card) {
             showEndScreen();
         }, 800);
     } else {
-        updateStatus("Wähle deine zweite Karte");
+        updateStatus("Pick your 2nd card");
     }
 }
 
