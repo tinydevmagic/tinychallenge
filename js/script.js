@@ -121,15 +121,11 @@ function launchConfetti() {
 }
 
 function downloadSelection() {
-    const container = document.getElementById("chosenCards");
-
-    // add CORS-attribute to <img>
-    container.querySelectorAll("img").forEach(img => {
-        img.setAttribute("crossorigin", "anonymous");
-    });
+    const container = document.querySelector('.chosen-cards');
 
     html2canvas(container, {
         useCORS: true,
+        scale: 2,
         backgroundColor: null,
         allowTaint: false
     }).then(canvas => {
@@ -137,8 +133,6 @@ function downloadSelection() {
         link.download = "tinychallenge.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
-    }).catch(err => {
-        console.error("Error while making screenshot:", err);
-        alert("Something went wrong! Please, try again.");
     });
 }
+
