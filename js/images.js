@@ -1,43 +1,43 @@
 export const images = [
     {
-        id: 'bunny',
+        id: 1,
         img: 'images/test.png',
         authorUrl: "https://codepixie.de",
-        user: "codepixie"
+        author: "codepixie"
     }, { 
-        id: 'cloud', 
+        id: 2, 
         img: 'images/test.png', 
         authorUrl: "https://codepixie.de", 
-        user: "codepixie" 
+        author: "codepixie" 
     }, { 
-        id: 'flower',
+        id: 3,
          img: 'images/test.png', 
          authorUrl: "https://codepixie.de", 
-         user: "codepixie" 
+         author: "codepixie" 
     }, { 
-        id: 'cookie',        
+        id: 4,        
         img: 'images/test.png', 
         authorUrl: "https://codepixie.de", 
-        user: "codepixie" 
+        author: "codepixie" 
     }, { 
-        id: 'star', 
+        id: 5, 
         img: 'images/test.png', 
         authorUrl: "https://codepixie.de", 
-        user: "codepixie" 
+        author: "codepixie" 
     }, { 
-        id: 'cat', 
+        id: 6, 
         img: 'images/test.png', 
         auauthorUrlthor: "https://codepixie.de", 
-        user: "codepixie" },
+        author: "codepixie" },
     { 
-        id: 'balloon', 
+        id: 7, 
         img: 'images/test.png', 
         authorUrl: "https://codepixie.de", 
-        user: "codepixie" 
+        author: "codepixie" 
     }, { 
-        id: 'icecream', 
+        id: 8, 
         img: 'images/test.png', 
         authorUrl: "https://codepixie.de", 
-        user: "codepixie" 
+        author: "codepixie" 
     }
 ];

@@ -64,7 +64,23 @@ function showEndScreen() {
 
     flippedCards.forEach(card => {
         const img = card.querySelector("img").cloneNode();
-        chosenContainer.appendChild(img);
+        const imageData = images.find(img => img.id === Number(card.querySelector("img").alt));
+
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("end-card");
+        wrapper.appendChild(img);
+
+        if (imageData) {
+            const authorLink = document.createElement("a");
+            authorLink.href = imageData.authorUrl;
+            authorLink.textContent = `@${imageData.author}`;
+            authorLink.target = "_blank";
+            authorLink.rel = "noopener noreferrer";
+            authorLink.classList.add("author-link");
+
+            wrapper.appendChild(authorLink);
+        }
+        chosenContainer.appendChild(wrapper);
     });
 
     document.getElementById("endScreen").style.display = "flex";
