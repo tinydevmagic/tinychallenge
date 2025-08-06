@@ -1,14 +1,4 @@
-const images = [
-    { id: 'bunny', img: 'images/test.png' },
-    { id: 'cloud', img: 'images/test.png' },
-    { id: 'flower', img: 'images/test.png' },
-    { id: 'cookie', img: 'images/test.png' },
-    { id: 'star', img: 'images/test.png' },
-    { id: 'cat', img: 'images/test.png' },
-    { id: 'balloon', img: 'images/test.png' },
-    { id: 'icecream', img: 'images/test.png' }
-];
-
+import { images } from './images.js';
 let currentCards = [];
 let flippedCards = [];
 let gameEnded = false;
@@ -135,4 +125,11 @@ function downloadSelection() {
         link.click();
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("startBtn").addEventListener("click", startGame);
+    document.getElementById("resetBtn").addEventListener("click", resetGame);
+    document.getElementById("backBtn").addEventListener("click", resetGame);
+    document.getElementById("downloadBtn").addEventListener("click", downloadSelection);
+});
 
