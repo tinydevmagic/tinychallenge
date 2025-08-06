@@ -1,14 +1,4 @@
-const images = [
-    { id: 'bunny', img: 'images/test.png' },
-    { id: 'cloud', img: 'images/test.png' },
-    { id: 'flower', img: 'images/test.png' },
-    { id: 'cookie', img: 'images/test.png' },
-    { id: 'star', img: 'images/test.png' },
-    { id: 'cat', img: 'images/test.png' },
-    { id: 'balloon', img: 'images/test.png' },
-    { id: 'icecream', img: 'images/test.png' }
-];
-
+import { images } from './images.js';
 let currentCards = [];
 let flippedCards = [];
 let gameEnded = false;
@@ -74,7 +64,23 @@ function showEndScreen() {
 
     flippedCards.forEach(card => {
         const img = card.querySelector("img").cloneNode();
-        chosenContainer.appendChild(img);
+        const imageData = images.find(img => img.id === Number(card.querySelector("img").alt));
+
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("end-card");
+        wrapper.appendChild(img);
+
+        if (imageData) {
+            const authorLink = document.createElement("a");
+            authorLink.href = imageData.authorUrl;
+            authorLink.textContent = `@${imageData.author}`;
+            authorLink.target = "_blank";
+            authorLink.rel = "noopener noreferrer";
+            authorLink.classList.add("author-link");
+
+            wrapper.appendChild(authorLink);
+        }
+        chosenContainer.appendChild(wrapper);
     });
 
     document.getElementById("endScreen").style.display = "flex";
@@ -135,4 +141,11 @@ function downloadSelection() {
         link.click();
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("startBtn").addEventListener("click", startGame);
+    document.getElementById("resetBtn").addEventListener("click", resetGame);
+    document.getElementById("backBtn").addEventListener("click", resetGame);
+    document.getElementById("downloadBtn").addEventListener("click", downloadSelection);
+});
 
