@@ -155,7 +155,6 @@ button:hover {
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  font-size: 1.6rem;
 }
 
 .card-front {
@@ -166,13 +165,12 @@ button:hover {
 }
 
 .card-back {
-  background: #fff;
   transform: rotateY(180deg);
-  padding: 6px;
+  padding: 3px;
 }
 
 .card-img {
-  width: 80%;
+  width: 100%;
   height: auto;
   border-radius: 10px;
 }
