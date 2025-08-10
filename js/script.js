@@ -30,7 +30,7 @@ function renderCards() {
 
         card.innerHTML = `
             <div class="card-inner">
-                <div class="card-front">?</div>
+                <div class="card-front"></div>
                 <div class="card-back">
                     <img src="${cardData.img}" alt="${cardData.id}" class="card-img"/>
                 </div>

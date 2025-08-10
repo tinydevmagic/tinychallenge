@@ -159,7 +159,7 @@ button:hover {
 }
 
 .card-front {
-  background: url('../images/card-back.png') center center no-repeat;
+  background: url('../images/card-back.jpg') center center no-repeat;
   background-size: cover;
   border-radius: 14px;
   backface-visibility: hidden;
